@@ -1,0 +1,511 @@
+<html>
+<script src="http://www.schillmania.com/projects/snowstorm/snowstorm-min.js" type="text/javascript"></script>
+
+
+<head>
+	<meta charset="utf-8">
+<title>自我介紹</title>
+<style>
+	 html {
+            height: 100%;
+			width:100%;
+        }
+         /*背景設定*/
+        body {
+            background-image: url(back.JPG);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+        }
+	
+	/*游標設定*/
+	.myMOUSE {
+		cursor: pointer;
+	}
+	
+	.myMOUSE2 {
+		cursor: help;
+	}
+
+	/*輪播圖片*/
+	.slider_container {
+    width: 100%;
+    height: 62%;
+    position: relative;
+    border: 10px solid;    
+    border-color: #fff;
+    border-bottom-width: 10px;
+    background-color: #f5f5f5;
+    box-shadow: #666 0 0 5px;
+	}
+
+	.slider_container div {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+	}
+
+	.slider_container div {
+    -webkit-animation: round 25s linear infinite;
+            animation: round 25s linear infinite;
+	}
+
+	@-webkit-keyframes round {
+    4% {
+        opacity: 1;
+        filter: alpha(opacity=100);
+        /* 0 - 1秒 淡入*/
+    }
+    20% {
+        opacity: 1;
+        filter: alpha(opacity=100);
+        /* 1- 5秒靜止*/
+    }
+    24% {
+        opacity: 0;
+        filter: alpha(opacity=0);
+        /* 5-6秒淡出*/
+    }
+	}	
+	@keyframes round {
+    4% {
+        opacity: 1;
+        filter: alpha(opacity=100);
+        /* 0 - 1秒 淡入*/
+    }
+    20% {
+        opacity: 1;
+        filter: alpha(opacity=100);
+        /* 1- 5秒靜止*/
+    }
+    24% {
+        opacity: 0;
+        filter: alpha(opacity=0);
+        /* 5-6秒淡出*/
+    }
+	}
+
+	.slider_container div:nth-child(5) {
+    -webkit-animation-delay: 0s;
+            animation-delay: 0s;
+	}	
+
+	.slider_container div:nth-child(4) {
+    -webkit-animation-delay: 5s;
+            animation-delay: 5s;
+	}
+
+	.slider_container div:nth-child(3) {
+    -webkit-animation-delay: 10s;
+            animation-delay: 10s;
+	}
+
+	.slider_container div:nth-child(2) {
+    -webkit-animation-delay: 15s;
+            animation-delay: 15s;
+	}
+
+	.slider_container div:nth-child(1) {
+    -webkit-animation-delay: 20s;
+            animation-delay: 20s;
+	}
+
+	.slider_container span {    
+	color: #9999e6;
+    background: #ffffe6;
+    position: absolute;
+    left: 0%;
+    top: 35%;
+    width: 100%;
+    height: 30%;
+    font-size: 200%;
+	font-family:"微軟正黑體";
+    text-align: center;
+    line-height: 350%;
+    -webkit-transform:scaleY(0);
+        -ms-transform:scaleY(0);
+            transform:scaleY(0);
+    -webkit-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out;
+	}
+
+	.slider_container:hover span {
+    width: 100%;
+    -webkit-transform:scaleY(1);
+        -ms-transform:scaleY(1);
+            transform:scaleY(1);
+	}
+
+	.slider_container:hover div {
+    -webkit-animation-play-state: paused;
+            animation-play-state: paused;
+	}
+
+    /*滑到變大*/
+	div.eg-CSS3-transitions,
+	div.eg-normal {
+	margin-top:2%;
+    float:left;
+    width: 40%;
+    padding: 2%;
+    background-color: #ffe6e6;
+    margin-left: 5%;
+    box-sizing: border-box ;
+	font-weight: bold;
+	height:41%;
+	font-family:"微軟正黑體";
+	border-top-left-radius: 50px;
+	border-top-right-radius: 50px;
+	border-bottom-right-radius: 50px;
+	border-bottom-left-radius: 50px;
+	font-size:100%;
+	}
+	
+	div.eg-CSS3-transitions:hover,
+	div.eg-normal:hover {
+    width: 45%;
+	}
+	
+	div.eg-CSS3-transitions {
+    -webkit-transition: width 1s;
+            transition: width 1s;
+	}
+
+	div.eg-CSS3-transitions2,
+	div.eg-normal2 {
+	margin-top:2%;
+    float:right;
+    width: 40%;
+    padding: 2%;
+    background-color: #ffe6e6;
+    margin-right: 5%;
+    box-sizing: border-box ;
+	height:41%;
+	font-weight: bold;
+	font-family:"微軟正黑體";
+	border-top-left-radius: 50px;
+	border-top-right-radius: 50px;
+	border-bottom-right-radius: 50px;
+	border-bottom-left-radius: 50px;
+	font-size:100%;
+	}
+
+	div.eg-CSS3-transitions2:hover,
+	div.eg-normal2:hover {
+    width: 45%;
+	}
+
+	div.eg-CSS3-transitions2 {
+    -webkit-transition: width 1s;
+            transition: width 1s;
+	}
+	
+	/*圖片外圍*/
+	#pic11{
+	position:absolute;
+    width: 14.5%;
+    background-color: #f2f2f2;
+    margin-left: 80.5%;
+    box-sizing: border-box ;
+	height:29.2%;
+	border-top-left-radius: 50%;
+	border-top-right-radius: 50%;
+	border-bottom-right-radius: 50%;
+	border-bottom-left-radius: 50%;
+	margin-top:1.3%;
+	z-index:1;
+	opacity:0.4;
+	}
+
+	/*圖片*/
+	#pic1{
+	position:relative;
+	float:right;
+    width: 13.4%;
+    background-color: #ffe6e6;
+    margin-right: 4.6%;
+    box-sizing: border-box ;
+	height:28%;
+	border-top-left-radius: 50%;
+	border-top-right-radius: 50%;
+	border-bottom-right-radius: 50%;
+	border-bottom-left-radius: 50%;
+	margin-top:1.8%;
+	background-image: url(pic1.JPG);
+	background-size: cover;
+	background-position: center;
+	z-index:2;
+	position:relative;
+	}
+	
+	#pic21{
+	position:absolute;
+    width: 17.7%;
+    background-color: #f2f2f2;
+    margin-left: 59.4%;
+    box-sizing: border-box ;
+	height:36.5%;
+	border-top-left-radius: 50%;
+	border-top-right-radius: 50%;
+	border-bottom-right-radius: 50%;
+	border-bottom-left-radius: 50%;
+	margin-top:5.3%;
+	z-index:1;
+	opacity:0.4;
+	}
+	
+	#pic2{
+	float:right;
+    width: 16.7%;
+    background-color: #ffe6e6;
+    margin-right: 4.6%;
+    box-sizing: border-box ;
+	height:35%;
+	border-top-left-radius: 50%;
+	border-top-right-radius: 50%;
+	border-bottom-right-radius: 50%;
+	border-bottom-left-radius: 50%;
+	margin-top:5.9%;
+	background-image: url(pic2.JPG);
+	background-size: cover;
+	background-position: center;
+	z-index:2;
+	position:relative;
+	}
+	
+	#pic31{
+	position:absolute;
+    width: 14.3%;
+    background-color: #f2f2f2;
+    margin-left: 41.7%;
+    box-sizing: border-box ;
+	height:29.2%;
+	border-top-left-radius: 50%;
+	border-top-right-radius: 50%;
+	border-bottom-right-radius: 50%;
+	border-bottom-left-radius: 50%;
+	margin-top:0.8%;
+	z-index:1;
+	opacity:0.4;
+	}
+	
+	#pic3{
+	float:right;
+    width: 13.4%;
+    background-color: #ffe6e6;
+    margin-right: 4.6%;
+    box-sizing: border-box ;
+	height:28%;
+	border-top-left-radius: 50%;
+	border-top-right-radius: 50%;
+	border-bottom-right-radius: 50%;
+	border-bottom-left-radius: 50%;
+	margin-top:1.2%;
+	background-image: url(pic3.JPG);
+	background-size: cover;
+	background-position: center;
+	z-index:2;
+	position:relative;
+	}
+	
+	#pic41{
+	position:absolute;
+    width: 17.7%;
+    background-color: #f2f2f2;
+    margin-left: 20.5%;
+    box-sizing: border-box ;
+	height:36.4%;
+	border-top-left-radius: 50%;
+	border-top-right-radius: 50%;
+	border-bottom-right-radius: 50%;
+	border-bottom-left-radius: 50%;
+	margin-top:5.3%;
+	z-index:1;
+	opacity:0.4;
+	}
+	
+	#pic4{
+	float:right;
+    width: 16.7%;
+    background-color: #ffe6e6;
+    margin-right: 4.65%;
+    box-sizing: border-box ;
+	height:35%;
+	border-top-left-radius: 50%;
+	border-top-right-radius: 50%;
+	border-bottom-right-radius: 50%;
+	border-bottom-left-radius: 50%;
+	margin-top:6%;
+	background-image: url(pic4.JPG);
+	background-size: cover;
+	background-position: center;
+	z-index:2;
+	position:relative;
+	}
+	
+	#pic51{
+	position:absolute;
+    width: 14.3%;
+    background-color: #f2f2f2;
+    margin-left: 2.8%;
+    box-sizing: border-box ;
+	height:29.2%;
+	border-top-left-radius: 50%;
+	border-top-right-radius: 50%;
+	border-bottom-right-radius: 50%;
+	border-bottom-left-radius: 50%;
+	margin-top:3.35%;
+	z-index:1;
+	opacity:0.4;
+	
+	}
+	
+	#pic5{
+	float:right;
+    width: 13.4%;
+    background-color: #ffe6e6;
+    margin-right: 4.6%;
+    box-sizing: border-box ;
+	height:28%;
+	border-top-left-radius: 50%;
+	border-top-right-radius: 50%;
+	border-bottom-right-radius: 50%;
+	border-bottom-left-radius: 50%;
+	margin-top:3.9%;
+	background-image: url(pic5.JPG);
+	background-size: cover;
+	background-position: center;
+	z-index:2;
+	position:relative;
+	}
+ 
+	#third{
+	position:relative;
+	margin-top:25%;
+	width:100%;
+	background: #ffe6cc;
+	text-align:center;
+	color:#002db3;
+	font-family:"微軟正黑體";
+	height:7%;
+	font-weight: bold;
+	border-top-left-radius: 50px;
+	border-top-right-radius: 50px;
+	border-bottom-right-radius: 50px;
+	border-bottom-left-radius: 50px;
+	}
+	
+	#buttom{
+	position:relative;
+	float:left;
+	margin-top:1%;
+	width:100%;
+	background: #333333;
+	color:#d9d9d9;
+	font-family:"微軟正黑體";
+	height:13%;
+	text-align:center;
+	}
+
+</style>
+</head>
+<body>
+	
+	<div class="slider_container">
+	<div>
+		<img src="top1.JPG" alt="pure css3 slider" height="100%" width="100%" />
+		<span class="info">這是我的家-澎湖</span>
+	</div>
+	<div>
+		<img src="top4.JPG" alt="pure css3 slider" height="100%" width="1600" />
+		<span class="info">Welecome!</span>
+	</div>
+	<div>
+		<img src="top5.JPG" alt="pure css3 slider" height="100%" width="100%" />
+		<span class="info">Welecome!</span>
+	</div>
+	<div>
+		<img src="top1.JPG" alt="pure css3 slider" height="100%" width="100%" />
+		<span class="info">這是我的家-澎湖</span>
+	</div>
+	<div>
+		<img src="top4.JPG" alt="pure css3 slider" height="100%" width="1600" />
+		<span class="info">Welecome!</span>
+	</div>
+	</div>
+	
+	<form>
+	</form>
+	
+	<div id="map" style="display: none;" style="width:400px;height:400px;background:red"></div>
+
+	<div class="eg-CSS3-transitions">
+	<h1 style="color:#ffbb99;margin-left:6%;">我是...</h1>
+	<p style="color:#1ab2ff;margin-left:6%;margin-right:6%;font-family:微軟正黑體;">我是沈佩璉，來自一個小島-澎湖。對於許多人來說，澎湖是個很陌生的地方，也許只是聽過，也許知道他是個觀光景點，對我來說，澎湖是我的家。澎湖是我最喜歡的地方，單純而且樸實，被大海包圍著，因此促成了我熱愛海的個性。時不時就喜歡到海邊去走一走。</p>
+	<div class="myMOUSE">
+	<a style = "color:#FF8080;" href="javascript: $('#map').dialog({autoOpen: true, show:{effect:'drop', direction:'right', duration: 1500}, width: '640', height: '640', resizable: false,});">澎湖在哪...?</a>
+	</div>
+	
+	</div>
+	<div class="eg-CSS3-transitions2">
+		<h2 style="color:#ffbb99;margin-left:6%;">平常做的事...</h2>
+		<p style="color:#1ab2ff;margin-left:6%;margin-right:6%;font-family:微軟正黑體;">大學之前，我喜愛參與社團活動，而我為喜歡的社團就是合唱。我認為音樂有撫平情緒的作用，於是在課餘時間，我喜歡用音樂填滿自己。偶爾也會在youtube上看看影片，或是電影，讓生活更加豐富。除此之外，也喜歡拍下各式各樣的照片，將美好的畫面保存下來。</p>
+		<a class="myMOUSE2" href="video.html" target="_blank" style="text-decoration:none;color:#FF8080">喜歡甚麼?</a>
+	</div>
+	
+	<div id="third" style="line-height:300%;">相片記錄</div>
+	
+	<div id="pic11"></div>
+	<div class="myMOUSE">
+	<div id="pic1"></div>
+	</div>
+	
+	<div id="pic21"></div>
+	<div class="myMOUSE">
+	<div id="pic2"></div>
+	</div>
+	
+	<div id="pic31"></div>
+	<div class="myMOUSE">
+	<div id="pic3"></div>
+	</div>
+	
+	<div id="pic41"></div>
+	<div class="myMOUSE">
+	<div id="pic4"></div>
+	</div>
+	
+	<div id="pic51"></div>
+	<div class="myMOUSE">
+	<div id="pic5"></div>
+	</div>
+	
+	<div id="buttom">
+	<p>Email: shen3nancy@gmail.com</p>
+	<p>系級:資財109</p>
+	</div>
+	
+    <embed src="Ed Sheeran - Lego House.mp3" hidden="true" loop="true" autostart="true" >
+
+</body>
+<script>
+function myMap() {
+var mapOptions = {
+    center: new google.maps.LatLng(23.60, 119.55),
+    zoom: 10,
+    mapTypeId: google.maps.MapTypeId.HYBRID
+}
+var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+}
+
+</script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/smoothness/jquery-ui.css" /> 
+<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
+<script type="text/javascript">
+</script>
+</html>

@@ -1,0 +1,32 @@
+.body-content input{
+	border:0;
+	color:rgba(61, 139, 173, 0.9);
+	background-color:rgba(255, 255, 255, 0.9) ;
+	font-family:Hastoler,SetoFont; 
+	font-size:20pt;
+	width:150px;
+}
+
+.body-content input:hover{
+	color:white;
+	background-color:rgba(255, 153, 153 ,0.5);
+	cursor:pointer;
+}
+
+.selectowner input[type="radio"] {
+	display: none;
+	font-family:SetoFont; 
+}
+
+.selectowner input[type="radio"] + label {
+	background-color:rgba(204, 230, 255, 0.5);
+	font-size:20px;
+	font-family:SetoFont; 
+	cursor: pointer;
+	padding: 5px 10px;
+}
+
+.selectowner input[type="radio"]:checked + label {
+	background-color:rgba(61, 139, 173, 0.5);
+	color:#ffffff;
+}
